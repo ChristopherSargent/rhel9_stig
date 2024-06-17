@@ -42,7 +42,7 @@ total 15600
 ```
 14. scp rhel9-playbook-stig.yml to awx or rhel9_stig repo
 
-# Run convert_cas.py
+# Run convert_cac.py
 1. ssh user@awx.or.aap
 2. sudo -i
 3. cd /var/lib/awx
