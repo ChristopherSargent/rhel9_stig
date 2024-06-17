@@ -123,6 +123,7 @@ total 15600
 ``` 
 
 # Add awx-legacy-ee to SWC AWX
+* [awx-legacy-ee](https://drive.google.com/file/d/1GMf7oJScIrijDUYZjFK_YY2heI6-3WFQ/view?usp=drive_link).
 1. scp awx-legacy-ee.tar.gz user@awx.or.aap:
 2. ssh user@awx.or.aap
 3. sudo -i 
