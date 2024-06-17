@@ -1,0 +1,18 @@
+---
+  - name: rhel9_stig
+    hosts: all
+    gather_facts: yes
+    become_user: root
+    tasks:
+    - name: Include compliance as code role
+      include_role:
+        name: compliance_as_code
+
+    - name: Load variables from stig_vars.yml
+      include_vars:
+        file: roles/rhel9_stig/vars/stig_vars.yml
+
+    - name: Include RHEL9 STIG role
+      include_role:
+        name: rhel9_stig
+

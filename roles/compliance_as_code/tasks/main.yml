@@ -1,0 +1,25 @@
+---
+- name: Enable codeready-builder-for-rhel-9 repository
+  command: |
+    subscription-manager repos --enable codeready-builder-for-rhel-9-{{ ansible_architecture }}-rpms
+  register: enable_repo
+  changed_when: "'enabled' in enable_repo.stdout"
+
+- name: Import EPEL GPG key
+  rpm_key:
+    state: present
+    key: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-9
+
+- name: Install EPEL repository
+  dnf:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+    state: present
+
+- name: Load vars file
+  include_vars: compliance_as_code.yml
+
+- name: Install compliance_as_code_packages
+  ansible.builtin.package:
+    name: "{{ compliance_as_code_packages }}"
+    state: present
+
