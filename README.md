@@ -72,7 +72,8 @@ total 15600
 ```
 7. python3 convert_cac.py 
 * This should parse rhel9-playbook-stig.yml into roles/rhel9_stig/tasks/main.yml and roles/rhel9_stig/vars/stig_vars.yml
-8. Configure AAP/AWX as needed. Note I had to create awx-ee-legacy execution environment which uses ansible 2.14 for this to run.
+8. Configure AAP/AWX as needed.
+* Note I had to create awx-ee-legacy execution environment which uses ansible 2.14 for this to run.
 9. sed -i -e 's|var_accounts_maximum_age_login_defs: !!str 60|var_accounts_maximum_age_login_defs: !!str 99999|g' /var/lib/awx/projects/rhel9_stig/roles/rhel9_stig/vars/stig_vars.yml
 * Note to set this temporarily or you will get locked out
 10. vim roles/rhel9_stig/tasks/main.yml
