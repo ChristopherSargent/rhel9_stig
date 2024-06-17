@@ -2,7 +2,7 @@
 # rhel9_stig
 This repository contains a script to parse the ansible playbook produced by compliance as code in an effort to modularize it. For additional details, please email at [christopher.sargent@sargentwalker.io](mailto:christopher.sargent@sargentwalker.io).
 
-# Stage rhel9-playbook.yml
+# Stage rhel9-playbook-stig.yml
 * Note that it is added already in this repository but if you need to create a new one here are the manual steps.
 
 1. ssh user@rhel9.server
